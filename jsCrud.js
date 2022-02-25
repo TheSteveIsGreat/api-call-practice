@@ -73,6 +73,8 @@ const updateFood1=(foods, id, price)=>{
  // Update - Map
 }
 
+
+
 //MAP
 
 // foods:[{id:number,name:string, price:number},...]
@@ -86,14 +88,13 @@ const updateFood1=(foods, id, price)=>{
 const updateFood2=(foods, id, food)=>{
   let update = foods.map((x) => {
     if (x.id === id) {
-      return {...x}, food
+      return food
     }
     return x
   })
   return update
 
  }
-
 
 // FILTER
 
@@ -120,8 +121,7 @@ const deleteFood1 = (foods,id)=>{
 // removes the food with price over price given
 
 const deleteFood2 = (foods,price)=>{
-  let filteredFood = foods.filter((x) => {
+  return foods.filter((x) => {
     return x.price > price
   })
-  return filteredFood
 }
